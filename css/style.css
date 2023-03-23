@@ -1,0 +1,303 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  background-color: #fff;
+  color: #474747;
+}
+img{
+  width: 100%;
+  object-fit: cover;
+}
+.container{
+  width: 90%;
+  min-height: 100vh;
+  margin: 20px auto;
+  position: relative;
+}
+.movie-header-title{
+  margin: 10px 0 0 0;
+  font-size: 40px;
+  text-align: center;
+}
+.form-section{
+  width: 25%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.movies-section{
+  width: 73%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.form-section input, .form-section select{
+  width: 100%;
+  padding: 15px;
+  font-size: 17px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  color: #525050;
+  border: 1px solid #aaa;
+}
+.btn{
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  box-shadow: 2px 2px 5px #01f6a4;
+}
+.btn:hover{
+  opacity: 0.8;
+}
+.search-btn{
+  background-color: rgb(8, 144, 255);
+  color: #fff;
+}
+.saved-films h3{
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 35px;
+}
+.saved-section{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.saved-title{
+  border: 1px solid #c4c3c3;
+  width: 70%;
+  margin-right: 25px;
+  border-radius: 4px;
+}
+.saved-title h4{
+  color: #6e6767;
+  font-size: 18px;
+  padding: 8px;
+}
+.saved-title button{
+  color: #fff;
+  background-color: rgb(228, 22, 22);
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+.movies-result{
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.note{
+  background-color: rgb(170, 216, 232);
+  padding: 15px 12px;
+  font-size: 19px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+.movies-cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 300px;
+  column-gap: 55px;
+}
+.movie-card{
+  height: 460px;
+  border: 1px solid #d4cdcd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.card-content{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 15px 15px 15px;
+  position: relative;
+}
+.card-img{
+  height: 50%;
+}
+.card-img img{
+  border-radius: 5px 5px 0 0;
+}
+.card-title{
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card-year{
+  margin-bottom: 10px;
+}
+.card-rating{
+  margin-bottom: 10px;
+}
+.card-lang{
+  margin-bottom: 10px;
+}
+.card-btns{
+  display: flex;
+  gap: 5px;
+}
+.card-btns button{
+  font-size: 14px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.watch-btn{
+  color: rgb(8, 144, 255);
+  background-color: #fff;
+  border: 1px solid rgb(8, 144, 255);
+}
+.watch-btn:hover{
+  background-color: rgb(8, 144, 255);
+  color: #fff;
+}
+.bookmark-btn{
+  color: rgb(5, 175, 20);
+  background-color: #fff;
+  border: 1px solid rgb(5, 175, 20);
+}
+.bookmark-btn:hover{
+  background-color: rgb(5, 175, 20);
+  color: #fff;
+}
+.images{
+  position: absolute;
+  bottom: 20px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.images img:first-child{
+  width: 20px;
+  height: 20px;
+cursor: pointer;
+}
+.images img:last-child{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.modal, .addModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+}
+.modal-content h2, .add-content h2{
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+  color: #0505ff;
+  text-shadow: 2px 2px #05cdff;
+}
+.modal-content, .add-content{
+  width: 50%;
+  height: 70%;
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(50, 75, 50, 0.55);
+  animation: anim .5s ease-in-out;
+}
+@keyframes anim{
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+#editForm{
+  margin-top: 35px;
+}
+.modal-content input{
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 12px 18px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  border: 2px solid #aaa;
+  box-shadow: 5px 5px 5px rgb(170, 216, 232);
+}
+#editForm button{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  outline: none;
+  background-color: rgb(11, 174, 54);
+  color: #fff;
+}
+
+#addForm{
+  margin-top: 35px;
+}
+.add-content input{
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 12px 18px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  border: 2px solid #aaa;
+}
+#addForm button{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  outline: none;
+  background-color: rgb(11, 174, 54);
+  color: #fff;
+}
+.addNewMovie{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+  text-shadow: 2px 2px rgb(160, 178, 245);
+  cursor: pointer;
+  font-size: 25px;
+  padding: 10px;
+  background-color: #9ee0e6;
+  border-radius: 10px;
+  color: #654bda;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px rgb(8, 251, 255);
+}
+.delete-modal-img{
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}

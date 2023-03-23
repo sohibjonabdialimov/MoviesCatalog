@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h1 class="movie-header-title">Movies catalog</h1>
+  <div class="container">
+    <div class="form-section">
+      <input type="text" placeholder="Kino nomini kiriting!" id="searchMovieTitle">
+      <input type="text" id="no-name">
+      <select id="select-all">
+        <option value="All">All</option>
+        <option value="Uncategorized">Uncategorized</option>
+        <option value="Documentary">Documentary</option>
+        <option value="Music">Music</option>
+        <option value="Drama">Drama</option>
+        <option value="Animation">Animation</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Family">Family</option>
+        <option value="Sport">Sport</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Romance">Romance</option>
+        <option value="Action">Action</option>
+        <option value="Horror">Horror</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="News">News</option>
+        <option value="History">History</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Western">Western</option>
+        <option value="Crime">Crime</option>
+      </select>
+      <select id="select-rating">
+        <option value="rating">Rating (high to low)</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+      </select>
+
+      <button class="btn search-btn" id="qidirish">Qidirish</button>
+      <div class="saved-films">
+        <h3>Saqlangan filmlar</h3>
+        <div class="saved-section"></div>
+      </div>
+    </div>
+    <div class="movies-section">
+      <div class="movies-result">Search Result: <span id="search-result">556</span></div>
+      <div class="note">Use the form on left to search movie</div>
+      <div class="movies-cards" id="moviesCards">
+      </div>
+    </div>
+  </div>
+  <button class="addNewMovie" id="addNewMovie">Add a new movie</button>
+
+
+
+  <div class="modal" id="modal">
+    <div class="modal-content" id="modalContent">
+      <h2>Edit your selected movie</h2>
+      <form id="editForm">
+        <input type="text" id="editTitle" placeholder="Enter title of movie">
+        <input type="text" id="editYear" placeholder="Enter year of movie">
+        <input type="text" id="editCategories" placeholder="Enter categories of movie">
+        <input type="text" id="editLanguage" placeholder="Enter language of movie">
+        
+        <input type="text" id="editRating" placeholder="Enter rating of movie">
+        <button type="submit" class="btn">Save</button>
+      </form>
+      <img class="delete-modal-img" id="deleteModalImage" src="img/delete.png" alt="">
+    </div>
+  </div>
+
+  <div class="addModal" id="addModal">
+    <div class="add-content" id="addContent">
+      <h2>Add a new movie</h2>
+      <form id="addForm">
+        <input type="text" required id="addTitle" placeholder="Enter title of new movie">
+        <input type="text" required id="addYear" placeholder="Enter year of new movie">
+        <input type="text" required id="addCategories" placeholder="Enter categories of new movie">
+        <input type="text" required id="addLanguage" placeholder="Enter language of new movie">
+        
+        <input type="text" required id="addRating" placeholder="Enter rating of new movie">
+        <button type="submit" class="btn">Add Movie</button>
+      </form>
+      <img class="delete-modal-img" id="deleteModalImage" src="img/delete.png" alt="">
+    </div>
+  </div>
+
+
+
+
+  <script src="./js/main.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
