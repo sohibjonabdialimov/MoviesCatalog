@@ -1,28 +1,29 @@
-const moviesCards = document.getElementById("moviesCards");
+const deleteModalImage = document.getElementById('deleteModalImage');
+const searchMovieTitle = document.getElementById('searchMovieTitle');
+const editCategories = document.getElementById('editCategories');
+const addCategories = document.getElementById('addCategories');
 const savedSection = document.querySelector('.saved-section');
-const selectAll = document.getElementById('select-all');
 const selectRating = document.getElementById('select-rating');
 const searchResult = document.getElementById('search-result');
-const searchMovieTitle = document.getElementById('searchMovieTitle');
-const editTitle = document.getElementById('editTitle');
-const editYear = document.getElementById('editYear');
-const editCategories = document.getElementById('editCategories');
 const editLanguage = document.getElementById('editLanguage');
+const moviesCards = document.getElementById("moviesCards");
+const addLanguage = document.getElementById('addLanguage');
+const addNewMovie = document.getElementById('addNewMovie');
 const editRating = document.getElementById('editRating');
-const modal = document.getElementById('modal');
+const selectAll = document.getElementById('select-all');
+const editTitle = document.getElementById('editTitle');
+const addRating = document.getElementById('addRating');
+const editYear = document.getElementById('editYear');
 const editForm = document.getElementById('editForm');
-const addForm = document.getElementById('addForm');
 const addModal = document.getElementById('addModal');
 const addTitle = document.getElementById('addTitle');
-const addYear = document.getElementById('addYear');
-const addCategories = document.getElementById('addCategories');
-const addLanguage = document.getElementById('addLanguage');
-const addRating = document.getElementById('addRating');
 const qidirish = document.getElementById('qidirish');
-const addNewMovie = document.getElementById('addNewMovie');
-const deleteModalImage = document.getElementById('deleteModalImage');
-let selectMovies = [];
+const addForm = document.getElementById('addForm');
+const addYear = document.getElementById('addYear');
+const modal = document.getElementById('modal');
+const ratingInput = document.getElementById('no-name');
 let ratingSelectMovies = [];
+let selectMovies = [];
 let removeArr = [];
 let globalInfo;
 
@@ -118,24 +119,25 @@ function sayHello(index) {
   if (!removeArr.includes(movies[index].title)) {
     removeArr.push(movies[index].title);
   };
-  renderRemoveMovie()
+  renderRemoveMovie();
 }
 
-function renderRemoveMovie() {
+function renderRemoveMovie(){
   let result = removeArr.map((item, index) => {
     let ok = `
   <div class="saved-title">
-     <h4>${item}</h4>
+     <h4>${item}</h4> 
      <button onclick="removeSavedMovie(${index})" class="btn remove-btn">Remove</button>
   </div>`;
     return ok;
   }).join(' ');
-  savedSection.innerHTML = result
+  savedSection.innerHTML = result; 
 }
 
 function removeSavedMovie(index) {
   removeArr = removeArr.filter((item) => item !== removeArr[index]);
   renderRemoveMovie();
+  // searchResult.innerHTML = movies.length;
 }
 let newSelectValue;
 selectAll.addEventListener("change", () => {
@@ -242,6 +244,7 @@ function deleteElement(id){
     return +item.id !== id;
   })
   renderHtmlElements(movies);
+  searchResult.innerHTML = movies.length;
 }
 
 editForm.addEventListener("submit", (e) => {
@@ -265,11 +268,7 @@ editForm.addEventListener("submit", (e) => {
   renderHtmlElements(movies);
 });
 
-modal.addEventListener("click", (e) => {
-  if(e.target === modal){
-    modal.style.display = 'none';
-  }
-});
+
 
 
 addNewMovie.addEventListener("click", () => {
@@ -310,3 +309,8 @@ addModal.addEventListener('click', (e) => {
     addModal.style.display = 'none';
   }
 })
+modal.addEventListener("click", (e) => {
+  if(e.target === modal || e.target.id === 'deleteModalImage'){
+    modal.style.display = 'none';
+  }
+});
